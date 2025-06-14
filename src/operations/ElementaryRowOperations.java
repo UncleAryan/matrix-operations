@@ -1,17 +1,25 @@
 package operations;
 
 public class ElementaryRowOperations {
-	public ElementaryRowOperations() {
-		
+	private int[][] matrix;
+	
+	public ElementaryRowOperations(int[][] matrix) {
+		this.matrix = matrix;
 	}
 	
-	public void RowSwap(int[][] matrix, int rowOne, int rowTwo) {
+	public void RowSwap(int rowOne, int rowTwo) {
 		int[] temp = matrix[rowOne-1];
 		matrix[rowOne-1] = matrix[rowTwo-1];
 		matrix[rowTwo-1] = temp;
 	}
 	
-	public void displayMatrix(int[][] matrix) {
+	public void scalarMultiplication(int row, int scalar) {
+		for(int i = 0; i < matrix[row-1].length; i++) {
+			matrix[row-1][i] *= scalar;
+		}
+	}
+	
+	public void displayMatrix() {
 		System.out.println();
 		for(int row = 0; row < matrix.length; row++) {
 			for(int col = 0; col < matrix[0].length; col++) {
@@ -21,7 +29,7 @@ public class ElementaryRowOperations {
 		}
 	}
 	
-	public void displayMatrixRow(int[][] matrix, int row) {
+	public void displayMatrixRow(int row) {
 		System.out.println();
 		for(int i = 0; i < matrix[row].length; i++) {
 			System.out.print(matrix[i] + " ");
