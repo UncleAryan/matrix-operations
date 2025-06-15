@@ -19,6 +19,22 @@ public class ElementaryRowOperations {
 		}
 	}
 	
+	public void addRows(int selectRow, int rowToBeAddedToSelectedRow, int scalar) {
+		selectRow--;
+		rowToBeAddedToSelectedRow--;
+		for(int i = 0; i < matrix[selectRow].length; i++) {
+			matrix[selectRow][i] += scalar * matrix[rowToBeAddedToSelectedRow][i];
+		}
+	}
+	
+	public void subtractRows(int selectRow, int rowToBeSubtractedToSelectedRow, int scalar) {
+		selectRow--;
+		rowToBeSubtractedToSelectedRow--;
+		for(int i = 0; i < matrix[selectRow].length; i++) {
+			matrix[selectRow][i] -= scalar * matrix[rowToBeSubtractedToSelectedRow][i];
+		}
+	}
+	
 	public void displayMatrix() {
 		System.out.println();
 		for(int row = 0; row < matrix.length; row++) {
